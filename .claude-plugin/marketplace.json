@@ -1,0 +1,5 @@
+{
+  "name": "next-steps-handoff",
+  "owner": { "name": "HengRatana404" },
+  "plugins": [{ "name": "next-steps-handoff", "source": "./" }]
+}
