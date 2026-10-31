@@ -92,7 +92,12 @@ function forkPrompt(skills: string): string {
     `as up to ${MAX_SUGGESTIONS} concrete prompts written in the user's voice (imperative, specific to ` +
     'this conversation: name the file, test, PR, or follow-up they would actually type). Prefer the ' +
     'obvious next action (run the tests, commit, fix the thing you flagged, do the same for X) over generic ' +
-    'ones. If the conversation is clearly finished or nothing useful comes to mind, return an empty list.\n\n' +
+    'ones. If your last message asked the user to choose or to confirm something, offer those choices as ' +
+    'the prompts, with the one you recommended first, and skip any option it said is not needed or already ' +
+    'done. Write each label so it makes sense on its own, in simple everyday words, with no letters like ' +
+    '(B) that point back to the message. Do not suggest pushing, sending, publishing or deleting unless ' +
+    'your last message asked the user to decide on exactly that. If the conversation is clearly finished ' +
+    'or nothing useful comes to mind, return an empty list.\n\n' +
     (skills === ''
       ? ''
       : 'The user runs a skill or slash command by starting a prompt with its name. When one of them is ' +
